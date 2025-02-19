@@ -2,22 +2,19 @@ document.getElementById("inputForm").addEventListener("submit", function(event) 
     event.preventDefault(); // Prevent form from refreshing the page
     let errorMessageBlock = document.getElementById("errorMessageBlock");
     var int1, int2, sum, difference, product, quotient, remainder;
+    const REGEX = /^[+-]?\d+$/;
 
     // Check if text fields are empty
     int1 = document.getElementById("int1").value;
     int2 = document.getElementById("int2").value;
-    if (int1 == "" || int2 == "") {
+    if (int1 === "" || int2 === "") {
         errorMessageBlock.innerHTML = "Both fields must be filled out to proceed";
         errorDesign();
         return;
     }
 
-    //Convert values to integers
-    int1 = parseInt(int1);
-    int2 = parseInt(int2);
-
     // Validate inputs
-    if (isNaN(int1) || isNaN(int2)) {
+    if (!REGEX.test(int1) || !REGEX.test(int2)) {
         errorMessageBlock.innerHTML = 
             "Invalid input.<br>" +
             "Please enter only whole numbers (e.g., 16, -5, 22).<br>" + 
@@ -25,6 +22,10 @@ document.getElementById("inputForm").addEventListener("submit", function(event) 
         errorDesign();
         return;
     }
+
+    //Convert values to integers
+    int1 = parseInt(int1);
+    int2 = parseInt(int2);
 
     // Clear error message if input is valid
     errorMessageBlock.innerHTML = "";
