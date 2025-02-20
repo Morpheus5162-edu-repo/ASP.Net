@@ -8,7 +8,7 @@ document.getElementById("inputForm").addEventListener("submit", function(event) 
     int1 = document.getElementById("int1").value;
     int2 = document.getElementById("int2").value;
     if (int1 === "" || int2 === "") {
-        errorMessageBlock.innerHTML = "Both fields must be filled out to proceed";
+        errorMessageBlock.innerHTML = "Both fields must be fislled out to proceed";
         errorDesign();
         return;
     }
