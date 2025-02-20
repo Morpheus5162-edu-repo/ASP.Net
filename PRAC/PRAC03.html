@@ -77,18 +77,31 @@
             errorMessageBlock.innerHTML = "";
 
             // Find the largest number using two-way branching
+            // if (int1 >= int2) {
+            //     if (int1 >= int3) {
+            //         largest = int1;
+            //     } else {
+            //         largest = int3;
+            //     }
+            // } else {
+            //     if (int2 >= int3) {
+            //         largest = int2;
+            //     } else {
+            //         largest = int3;
+            //     }
+            // }
+
+            // Correct answer for the question
             if (int1 >= int2) {
-                if (int1 >= int3) {
-                    largest = int1;
-                } else {
-                    largest = int3;
-                }
+                largest = int1;
             } else {
-                if (int2 >= int3) {
-                    largest = int2;
-                } else {
-                    largest = int3;
-                }
+                largest = int2;
+            }
+
+            if (largest >= int3){
+                largest = largest;
+            } else {
+                largest = int3;
             }
             
             // Display result in the modal
