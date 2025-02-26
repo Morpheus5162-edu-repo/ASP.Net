@@ -16,9 +16,7 @@ function getOvertimePay(overtimeHrs) {
 }
 
 $(document).ready(function() {
-    console.log("jQuery loaded:", typeof $);
     $('#submitBtn').click(function () {
-        console.log("Bootstrap loaded:", typeof bootstrap);
         let hrsWorked = $('#hrsWorked').val().trim();
 
         if(hrsWorked === '') {
